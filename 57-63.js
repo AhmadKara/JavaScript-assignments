@@ -36,15 +36,30 @@ calculate(20, 30, "multiply"); // 600
 
 //////////////////////////////////////
 
-
 function ageInTime(theAge) {
   if (theAge < 10 || theAge > 100) {
-    console.log("Age Out Of Range")
+    console.log("Age Out Of Range");
   } else {
-    console.log(`Your Age In Months => ${theAge * 12} Momths`)
+    console.log(`Your Age In Months => ${theAge * 12} Momths`);
   }
 }
 
 // Needed Output
 ageInTime(110); // Age Out Of Range
 ageInTime(38); // Months Example => 456 Months
+
+////////////////////////////////////
+
+function checkStatus(a, b, c) {
+  if (c === true) {
+    console.log(`Hello ${a}, Your Age Is ${b}, You Are Available For Hire`);
+  } else if (c === false) {
+    console.log(`Hello ${a}, Your Age Is ${b}, You Are Not Available For Hire`);
+  } else {
+    console.log("Unknown");
+  }
+}
+
+// Needed Output
+checkStatus("Ahmad", 38, true); // "Hello Ahmad, Your Age Is 38, You Are Available For Hire"
+checkStatus("Ahmad", 17, false); // "Hello Ahmad, Your Age Is 38, You Are Not Available For Hire"
