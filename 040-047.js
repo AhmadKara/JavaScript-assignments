@@ -77,6 +77,6 @@ console.log(my); // ["Osama", "Elham", "Mazero", "Ahmed"];
 
 console.log(my.slice(++zero, ++counter)); // ["Elham", "Mazero"]
 
-console.log(`${my[1].slice(0, 2)}${my[2].slice(2)}`); // "Elzero"
+console.log(`${my[zero].slice(--zero, --counter)}${my[counter].slice(counter)}`); // "Elzero"
 
-console.log(`${my[2].slice(-2, -1)}${my[2].slice(-1).toUpperCase()}`); // "rO"
+console.log(`${my[counter].slice(--zero - --counter, zero)}${my[++counter].slice(zero).toUpperCase()}`); // "rO"
