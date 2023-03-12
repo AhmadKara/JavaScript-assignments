@@ -1,40 +1,59 @@
 let mix = [1, 2, 3, "E", 4, "l", "z", "e", "r", 5, "o"];
 
-let mix_Elzero = mix
-  .map(function (ele, index, arr) {
-    return isNaN(parseInt(ele)) ? ele : "";
+let word = mix
+  .map(function (element) {
+    return typeof element == "string" ? element : "";
   })
   .reduce(function (acc, current) {
-    return acc + current;
+    return `${acc}${current}`;
   });
-console.log(mix_Elzero);
-// Elzero
 
-////////////////
+// Elzero
+console.log(word);
 
 let myString = "EElllzzzzzzzeroo";
-let removeDublicate = myString
+let myString2 = myString
   .split("")
-  .filter(function (ele, index, arr) {
-    return arr.indexOf(ele) === index;
+  .filter(function (element, index, arr) {
+    return arr.indexOf(element) === index;
   })
   .join("");
-console.log(removeDublicate);
 
 // Elzero
-
-////////////////
-
-
+console.log(myString2);
 
 let numsAndStrings = [1, 10, -10, -20, 5, "A", 3, "B", "C"];
+let numbers = numsAndStrings
+  .filter(function (element) {
+    return !isNaN(parseInt(element));
+  })
+  .map(function (element) {
+    return -element;
+  });
 
-let reversedNumbers = numsAndStrings.filter(function(ele){
-  return ! isNaN(parseInt(ele));
-}).map(function(ele){
-  return ele * -1 ;
-})
-
-console.log(reversedNumbers)
 // [-1, -10, 10, 20, -5, -3]
+console.log(numbers);
 
+/*
+
+
+
+*/
+
+let myArray = ["E", "l", "z", ["e", "r"], "o"];
+let newArray = myArray
+  .reduce(function (acc, current) {
+    return acc.concat(current);
+  }, [])
+  .join("");
+
+// Elzero
+console.log(newArray);
+
+let nums = [2, 12, 11, 5, 10, 1, 99];
+let fiveH = nums.reduce(function (acc, current) {
+  return current % 2 == 0 ? acc * current : acc + current;
+});
+
+// 500
+console.log(fiveH);
