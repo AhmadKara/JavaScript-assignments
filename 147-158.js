@@ -10,24 +10,18 @@ class Car {
   stop() {
     return `Car Is Stopped`;
   }
-  getFullData() {
-    return `Car One Name Is ${this.n} And Model Is ${this.m} And Price Is ${this.p}`;
-  }
 }
 
-let carOne = new Car("MG", 2022, 420000);
-let carTwo = new Car("BMW", 2022, 600000);
-let carThree = new Car("GMC", 2022, 550000);
-
-console.log(carOne.getFullData());
+let carOne = new Car("Mustang", 2023, 50000);
+console.log(
+  `Car one name is ${carOne.n} and model is ${carOne.m} and price is ${carOne.p}`
+);
 console.log(carOne.run());
 
 // Needed Output
 
-// ("Car One Name Is MG And Model Is 2022 And Price Is 420000");
-// ("Car Is Running Now");
-
-/////////////////////////
+("Car One Name Is MG And Model Is 2022 And Price Is 420000");
+("Car Is Running Now");
 
 class Phone {
   constructor(name, serial, price) {
@@ -61,8 +55,6 @@ console.log(`${TabletTwo.fullDetails()}`);
 console.log(`${TabletThree.fullDetails()}`);
 // LG Serial is 250450650 And Size Is Unknown
 
-/////////////////////////////
-
 // Edit The Class
 class User {
   #c;
@@ -71,13 +63,8 @@ class User {
     this.#c = card;
   }
   get showData() {
-    let str = this.#c
-      .toString()
-      .split("-")
-      .join()
-      .match(/(\d{4})/g)
-      .join("-");
-    return `Hello ${this.u} Your Credit Card Number Is ${str}`;
+    let card = this.#c.toString().match(/\d{4}/gi).join("-");
+    return `Hello ${this.u} Your Credit Card Number Is ${card}`;
   }
 }
 
@@ -99,8 +86,6 @@ console.log(userThree.showData);
 console.log(userOne.c); // Prevent Accessing To Card Property Here
 // Undefined
 
-////////////////////////
-
 // Write Your Code Here
 String.prototype.addLove = function () {
   return `I Love ${this}`;
@@ -109,8 +94,6 @@ String.prototype.addLove = function () {
 // Do Not Edit Below
 let myStr = "Elzero";
 console.log(myStr.addLove()); // I Love Elzero Web School
-
-//////////////////////////////////////////////////////////
 
 const myObj = {
   username: "Elzero",
@@ -127,11 +110,7 @@ Object.defineProperties(myObj, {
   id: {
     enumerable: false,
   },
-  country: {
-    enumerable: false,
-  },
 });
-
 delete myObj.country;
 
 myObj.score = 500;
